@@ -8,71 +8,34 @@
 </head>
 
 <body>
-    <div id="simple">
-        <input id="a" type="text" v-model="name" placeholder="이름을 입력하세요" />
-        <br/> 입력된 이름 :
-        <h2 v-html="name"></h2>
-        <!-- <h2 v-text="message"></h2> -->
+    <div id="simple1">
+        <div>좋아하는 과일을 모두 골라주세요</div>
+        <input type="checkbox" value="1" v-model="fruits">사과,
+        <input type="checkbox" value="2" v-model="fruits">키위,
+        <input type="checkbox" value="3" v-model="fruits">포도,
+        <input type="checkbox" value="4" v-model="fruits">수박,
+        <input type="checkbox" value="5" v-model="fruits">참외
     </div>
-    <!--     
-    <div id="app">
-        <img src="https://vuejs.org/images/logo.png" alt="Vue logo">
-        <h1>{{ greeting }}</h1>
-        <ul>
-            <li>
-                To learn more about Vue, visit
-                <a :href="docsURL" target="_blank">
-          {{ humanizeURL(docsURL) }}
-        </a>
-            </li>
-            <li>
-                For live help with simple questions, check out
-                <a :href="discordURL" target="_blank">
-          the Discord chat
-        </a>
-            </li>
-            <li>
-                For more complex questions, post to
-                <a :href="forumURL" target="_blank">
-          the forum
-        </a>
-            </li>
-        </ul>
-    </div> -->
+    <hr/>
+
+    <div id="simple2">
+        선택한 과일들 : <span v-html="fruits"></span>
+    </div>
 
     <script type="text/javascript">
-        var twoway = new Vue({
+        var model = {
+            fruits: []
+        };
+
+        var simple1 = new Vue({
             el: '#simple',
-            data: {
-                name: ''
-            }
-        })
+            data: model
+        });
 
-        // var model = {
-        //     message: 'v-bind 디렉티브',
-        //     imagePath: "http://sample.bmaster.kro.kr/photos/61.jpg"
-        // };
-
-        // var simple = new Vue({
-        //         el: '#simple',
-        //         data: model
-        //     })
-        // var app = new Vue({
-        //     el: '#app',
-        //     data: {
-        //         greeting: 'Welcome to your Vue.js app!',
-        //         docsURL: 'http://vuejs.org/guide/',
-        //         discordURL: 'https://chat.vuejs.org',
-        //         forumURL: 'http://forum.vuejs.org/'
-        //     },
-        //     methods: {
-        //         humanizeURL: function(url) {
-        //             return url
-        //                 .replace(/^https?:\/\//, '')
-        //                 .replace(/\/$/, '')
-        //         }
-        //     }
-        // })
+        var simple2 = new Vue({
+            el: '#simple2',
+            data: model
+        });
     </script>
 </body>
 

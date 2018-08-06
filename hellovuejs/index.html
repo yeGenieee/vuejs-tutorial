@@ -43,7 +43,7 @@
             </thead>
             <tbody id="contacts">
                 <template v-for="(contact, index) in contacts">
-                  <tr>
+                  <tr :key="contact.no">
                     <td>{{contact.no}} </td>
                     <td>{{contact.name}}</td>
                     <td>{{contact.tel}}</td>

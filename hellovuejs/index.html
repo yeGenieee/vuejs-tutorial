@@ -21,12 +21,16 @@
             color: yellow;
             background-color: purple;
         }
+        
+        [v-cloak] {
+            display: none;
+        }
     </style>
     <script src="https://unpkg.com/vue/dist/vue.min.js"></script>
 </head>
 
 <body>
-    <div id="example">
+    <div id="example" v-cloak>
         <p>
             이름 : <input type="text" v-model="name" placeholder="두 자 이상 입력하세요" />
         </p>
